@@ -1,0 +1,56 @@
+.coming{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  font-size: 4rem;
+}
+
+.coming > div{
+  opacity: 0.6;
+  font-size: 1.5rem;
+  color: #585e80;
+  font-family: 'GeneralSans Regular';
+  display: flex;
+  align-items: center;
+}
+
+.coming > div span{
+  margin-top: -4px;
+  margin-right: 5px;
+}
+
+.coming > span{
+  font-family: 'GeneralSans Semibold';
+  color: #c792ea;
+}
+
+.coming > span span{
+  color: #89ddff;
+}
+
+.coming .tag{
+  opacity: 1;
+  font-size: 2rem;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-family: 'GeneralSans Medium';
+}
+
+.coming hr{
+  opacity: 0.1;
+  border-top: none;
+}
+
+.coming .tag .white{
+  color: #bfc7d5;
+}
+
+.coming .tag .green{
+  color: #b9db67;
+}
+
+.coming .tag .purple{
+  color: #c792ea;
+}
