@@ -10,7 +10,7 @@ export default function Home() {
 
       <hr/>
       
-      <div><span>{"//"}</span> Coming soon!</div> 
+      <div><span>{"//"}</span> Coming soon!!!</div> 
 
       <div className="tag">
         <span className="purple">let</span>
