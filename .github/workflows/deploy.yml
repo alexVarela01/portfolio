@@ -30,7 +30,7 @@ jobs:
         run: |
           ssh deploy@37.187.181.189 << 'EOF'
             # Put your commands here, for example:
-            cd /path/to/your/app
+            cd /home/deploy/portfolio3.0
             git pull origin master
             npm install
             pm2 restart app-name
