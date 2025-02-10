@@ -5,12 +5,12 @@ export default function Home() {
   return (
     <div className='coming'>
       <span>
-        temp Alexandre <span>Varela</span>
+        Alexandre <span>Varela</span>
       </span>
 
       <hr/>
       
-      <div><span>{"//"}</span> Coming soon!!!</div> 
+      <div><span>{"//"}</span> Coming soon!</div> 
 
       <div className="tag">
         <span className="purple">let</span>
