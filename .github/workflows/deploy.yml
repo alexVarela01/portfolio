@@ -29,10 +29,13 @@ jobs:
       - name: Deploy
         run: |
           ssh deploy@37.187.181.189 << 'EOF'
-            # Put your commands here, for example:
             cd /home/deploy/portfolio3.0
             git pull origin master
             npm install
-            npm run build
-            pm2 restart portfolio
+            if npm run build; then
+              pm2 restart portfolio
+            else
+              echo "Build failed, PM2 not restarted."
+              exit 1
+            fi
           EOF
