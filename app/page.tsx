@@ -9,7 +9,7 @@ export default function Home() {
       <div className="main">
         <div className="info">
           <div className="left">
-            <div className="badge"><BiTestTube/>Full Stack and QA Engineer</div>
+            <div className="badge"><BiTestTube/>QA Engineer and Developer</div>
 
             <p className="comment">Initialize developer</p>
             <h1 className="name code">
@@ -17,14 +17,22 @@ export default function Home() {
               <span className="blue">Varela</span>
             </h1>
             
-            <p className="code role">{"<"}<span className="red">AnAwesomeGuy</span>{"/>"}</p>
+            <p className="code role">{"<"}<span className="red">MrWorksOnMyMachine</span>{"/>"}</p>
             
-            <p className="description">Building elegant solutions to complex problems with clean, maintainable code. Specialized in full-stack development and quality assurance, both manual and automated testing.</p>
+            <p className="description">QA specialist by day, hobbyist developer by night—squashing bugs, ensuring quality, and building cool projects in between.</p>
+
+            <p className="code WIP">
+              <span className="purple">let</span>
+              <span>status</span>
+              <span className="purple">=</span>
+              <span className="green">&apos;WorkInProgress&apos;</span>
+            </p>
           </div>
           
           <div className="right">
             <CodePanel/>
           </div>
+
         </div>
       </div>
     </div>

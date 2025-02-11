@@ -38,6 +38,7 @@ export default function CodePanel() {
           <span>7</span>
           <span>8</span>
           <span>9</span>
+          <span>10</span>
         </div>
 
         <div className="content">
@@ -47,15 +48,15 @@ export default function CodePanel() {
           
           <span className="sp1"><span>age:</span> <span className="orange" style={{ marginRight: '-8px'}}>{age}</span>,</span>
 
-          <span className="sp1"><span>experience:</span> <span className="orange" style={{ marginRight: '-8px'}}>{experience}</span>,<div className="cursor"></div></span>
+          <span className="sp1"><span>experience:</span> <span className="orange" style={{ marginRight: '-8px'}}>{experience}</span>,<div className="cursor"></div> <span className="comment" style={{ marginRight: '-8px', marginLeft: '8px', gap: '0px'}}>years</span></span>
           
-          <span className="sp1"><span>roles:</span>[<span className="green" style={{ marginRight: '-8px', marginLeft: '-8px'}}>&apos;Full Stack Developer&apos;</span>,<span className="green" style={{ marginRight: '-8px'}}>&apos;QA Engineer&apos;</span>],</span>
+          <span className="sp1"><span>roles:</span>[<span className="green" style={{ marginRight: '-8px', marginLeft: '-8px'}}>&apos;QA Engineer&apos;</span>,<span className="green" style={{ marginRight: '-8px'}}>&apos;Full Stack Developer&apos;</span>],</span>
           
           <span className="sp1"><span>skills:</span><span className="purple">{"{"}</span></span>
+
+          <span className="sp2"><span>testing:</span>[<span className="green" style={{ marginRight: '-8px', marginLeft: '-8px'}}>&apos;Manual&apos;</span>,<span className="green" style={{ marginRight: '-8px'}}>&apos;Automated&apos;</span>],</span>
           
           <span className="sp2"><span>development:</span>[<span className="green" style={{ marginRight: '-8px', marginLeft: '-8px'}}>&apos;Backend&apos;</span>,<span className="green" style={{ marginRight: '-8px'}}>&apos;Frontend&apos;</span>],</span>
-          
-          <span className="sp2"><span>testing:</span>[<span className="green" style={{ marginRight: '-8px', marginLeft: '-8px'}}>&apos;Manual&apos;</span>,<span className="green" style={{ marginRight: '-8px'}}>&apos;Automated&apos;</span>],</span>
           
           <span className="sp1"><span className="purple">{"}"}</span></span>
 
