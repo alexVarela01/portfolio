@@ -1,0 +1,101 @@
+.codepanel{
+  background-color: #32374c;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.codepanel .header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.codepanel .header span{
+  font-size: 16px;
+  font-family: "Consolas Regular";
+  color: #676e95;
+  margin-left: auto;
+}
+
+.codepanel .header .controls{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.codepanel .header .controls span{
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #676e95;
+}
+
+.codepanel .header .controls span:nth-child(1){ background-color: #ff5370; }
+.codepanel .header .controls span:nth-child(2){ background-color: #ffcb6b; }
+.codepanel .header .controls span:nth-child(3){ background-color: #c3e88d; }
+
+
+.codepanel .code{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.codepanel .code .lines{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.codepanel .code .lines span{
+  font-size: 16px;
+  font-family: "Consolas Regular";
+  color: #676e95;
+}
+
+.codepanel .code .content{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.codepanel .code .content span{
+  font-size: 16px;
+  font-family: "Consolas Regular";
+  display: flex;
+  gap: 10px;
+}
+
+.codepanel .code .content span.sp1{
+  margin-left: 20px;
+}
+
+.codepanel .code .content span.sp2{
+  margin-left: 40px;
+}
+
+.codepanel .cursor{
+  background-color: #c792ea;
+  opacity: 0.7;
+  width: 2px;
+  height: 100%;
+  margin-left: -20px;
+  animation: pulse 1s infinite ease-in-out;
+}
+
+/* animate */
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
