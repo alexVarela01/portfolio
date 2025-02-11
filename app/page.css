@@ -1,56 +1,89 @@
-.coming{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  font-size: 4rem;
+.container{
+  background-color: #292d3e; 
 }
 
-.coming > div{
-  opacity: 0.6;
-  font-size: 1.5rem;
-  color: #585e80;
-  font-family: 'GeneralSans Regular';
+.container .main{
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
-.coming > div span{
-  margin-top: -4px;
-  margin-right: 5px;
+.container .main .info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  width: 1100px;
 }
 
-.coming > span{
-  font-family: 'GeneralSans Semibold';
+.container .main .left{
+  flex: 0.5;
+} 
+
+.container .main .left .name{
+  font-size: 60px;
+  font-family: "Consolas Bold";
   color: #c792ea;
+  display: flex;
+  gap: 20px;
+  margin: 0;
 }
 
-.coming > span span{
+.container .main .left .role{
+  font-size: 40px;
+  font-family: "Consolas Regular";
   color: #89ddff;
+  margin-bottom: 20px;
 }
 
-.coming .tag{
-  opacity: 1;
-  font-size: 2rem;
+.container .main .left .badge{
+  font-size: 13px;
+  font-family: "Consolas Regular";
+  color: #ffcb6b;
+  background-color: #32374c;
+  padding: 10px 15px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  width: fit-content;
   display: flex;
-  gap: 5px;
   align-items: center;
-  font-family: 'GeneralSans Medium';
+  justify-content: center;
+  gap: 10px;
 }
 
-.coming hr{
-  opacity: 0.1;
-  border-top: none;
+.container .main .left .description{
+  font-size: 19px;
+  line-height: 30px;
+  font-family: "Consolas Regular";
+  color: #676e95;
+  margin: 0;
+}
+.container .main .left .comment{
+  font-size: 18px;
 }
 
-.coming .tag .white{
-  color: #bfc7d5;
+.container .main .right{
+  flex: 0.5;
 }
 
-.coming .tag .green{
-  color: #b9db67;
-}
 
-.coming .tag .purple{
-  color: #c792ea;
+
+
+.comment{
+  font-size: 20px;
+  font-family: "Consolas Regular";
+  color: #676e95;
+  margin: 0;
 }
+.comment::before{ content: "//"; margin-right: 10px;}
+
+.code{ color: #adb4c4; margin: 0; }
+.code .purple{ color: #c792ea; }
+.code .blue{ color: #89ddff; }
+.code .yellow{ color: #ffcb6b; }
+.code .red{ color: #e1426c; }
+.code .green{ color: #c3e88d; }
+.code .orange{ color: #f78c65; }
