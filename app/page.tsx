@@ -11,7 +11,7 @@ export default function Home() {
           <div className="left">
             <div className="badge"><BiTestTube/>QA Engineer and Developer</div>
 
-            <p className="comment">Initialize developer</p>
+            <p className="comment">Hello, I'm</p>
             <h1 className="name code">
               <span className="purple">Alexandre</span>
               <span className="blue">Varela</span>
