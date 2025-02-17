@@ -17,7 +17,7 @@ export default function Home() {
               <span className="blue">Varela</span>
             </h1>
             
-            <p className="code role">{"<"}<span className="red">MrWorksOnMyMachine</span>{"/>"}</p>
+            <p className="code role">{"<"}<span className="red">ReleaseGatekeeper</span>{"/>"}</p>
             
             <p className="description">QA specialist by day, hobbyist developer by night—squashing bugs, ensuring quality, and building cool projects in between.</p>
 
@@ -25,7 +25,7 @@ export default function Home() {
               <span className="purple">let</span>
               <span>status</span>
               <span className="purple">=</span>
-              <span className="green">&apos;WorkInProgress&apos;</span>
+              <span className="green anim">&apos;WorkInProgress&apos;</span>
             </p>
           </div>
           

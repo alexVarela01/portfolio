@@ -94,7 +94,7 @@
     opacity: 0.7;
   }
   50% {
-    opacity: 0;
+    opacity: 0.2;
   }
   100% {
     opacity: 0.7;
@@ -111,5 +111,8 @@
   font-family: "Consolas Regular";
   gap: 20px;
   display: flex;
+}
+
+.anim{
   animation: pulse 3s infinite ease-in-out;
 }
