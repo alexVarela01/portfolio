@@ -1,0 +1,31 @@
+{
+  "projects" : [
+    {
+      "name": "MONETIS",
+      "url": "https://monetis.eshkay.dev/",
+      "github": "https://github.com/alexVarela01/monetis",
+      "description": "MONETIS is a secure and user-friendly platform for testing and managing finances. It’s ideal for test automators, offering tools to simulate, validate, and monitor financial transactions with ease.",
+      "tags": ["Next.js", "TypeScript", "Prisma", "Postgres", "Testing"]
+    },
+    {
+      "name": "QWiFi-Code",
+      "url": "https://projects.eshkay.dev/qwificode/",
+      "description": "QWiFi is a tool that generates QR codes to facilitate access to WiFi networks. Simply scan the QR code with your smartphone to connect automatically.",
+      "tags": ["Tool", "jQuery"]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISTQB CTFL",
+      "url": "https://www.istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/",
+      "subname": "Certified Foundation Level Tester",
+      "date": "Oct 2022"
+    },
+    {
+      "name": "ISTQB CT-AT",
+      "url": "https://www.istqb.org/certifications/certified-tester-foundation-level-agile-tester-ctfl-at/",
+      "subname": "Certified Agile Tester",
+      "date": "Mar 2024"
+    }
+  ]
+}
