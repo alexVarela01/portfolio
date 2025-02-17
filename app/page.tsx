@@ -72,7 +72,7 @@ export default function Home() {
               
               <p className="code role">{"<"}<span className="red">ReleaseGatekeeper</span>{"/>"}</p>
               
-              <p className="description">QA specialist by day, hobbyist developer by night—squashing bugs, ensuring quality, and building cool projects in between.</p>
+              <p className="description">QA specialist by day, hobbyist developer by night—squashing bugs, ensuring quality, and building cool projects along the way.</p>
             </div>
             
             <div className="right">
@@ -112,13 +112,13 @@ export default function Home() {
                 </div>
 
                 <div className="skill">
-                  <h3><PiArrowClockwise className="blue"/> Automated testing</h3>
+                  <h3><PiArrowClockwise className="blue"/> Automated Testing</h3>
                   <ul style={{columns: 2}}>
                     <li>SerenityBDD</li>
                     <li>BackstopJS</li>
                     <li>Selenium</li>
                     <li>Cypress</li>
-                    <li>Github Actions</li>
+                    <li>GitHub Actions</li>
                     <li>Jenkins</li>
                   </ul>
                 </div>

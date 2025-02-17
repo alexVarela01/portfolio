@@ -4,13 +4,13 @@
       "name": "MONETIS",
       "url": "https://monetis.eshkay.dev/",
       "github": "https://github.com/alexVarela01/monetis",
-      "description": "MONETIS is a secure and user-friendly testing platform designed for managing finances. It’s ideal for test automators, offering tools to simulate, validate, and monitor financial transactions with ease.",
+      "description": "MONETIS is a secure and user-friendly platform for testing and managing finances. It’s ideal for test automators, offering tools to simulate, validate, and monitor financial transactions with ease.",
       "tags": ["Next.js", "TypeScript", "Prisma", "Postgres", "Testing"]
     },
     {
       "name": "QWiFi-Code",
       "url": "https://projects.eshkay.dev/qwificode/",
-      "description": "QWiFi is a tool that generates QR codes to facilitate access to WiFi networks. Through your smartphone's scanner, the configuration can be done automatically.",
+      "description": "QWiFi is a tool that generates QR codes to facilitate access to WiFi networks. Simply scan the QR code with your smartphone to connect automatically.",
       "tags": ["Tool", "jQuery"]
     }
   ],
