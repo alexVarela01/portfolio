@@ -10,7 +10,7 @@
   height: 100vh;
 }
 
-.container .main .info{
+.container .info{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -19,7 +19,7 @@
   width: 1100px;
 }
 
-.container .main .left{
+.container .left{
   flex: 0.5;
 } 
 
@@ -54,7 +54,7 @@
   gap: 10px;
 }
 
-.container .main .left .description{
+.container .description{
   font-size: 19px;
   line-height: 30px;
   font-family: "Consolas Regular";
@@ -65,11 +65,96 @@
   font-size: 18px;
 }
 
-.container .main .right{
+.container .right{
   flex: 0.5;
 }
 
+.container .about-me{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+}
 
+.container .about-me .title{
+  margin-bottom: 10px;
+}
+
+.container .about-me .description{
+  font-size: 17px;
+  line-height: 25px;
+}
+
+.container .about-me .left{
+  flex: 1;
+}
+
+.container .about-me .right img{
+  width: 400px;
+  height: fit-content;
+  position: relative;
+  opacity: 0.85;
+}
+
+.container .about-me .left .skills{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 30px;
+}
+
+.container .about-me .left .skills .skill{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  flex-basis: calc(50% - 5px);
+}
+
+.container .about-me .left .skills .skill h3{
+  font-size: 20px;
+  font-weight: normal;
+  font-family: "Consolas Regular";
+  color: #acb3c2;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.container .about-me .left .skills .skill h3 svg{
+  font-size: 25px;
+}
+
+.container .about-me .left .skills .skill ul{
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0 0px 0px 20px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.container .about-me .left .skills .skill ul li{
+  font-size: 17px;
+  font-family: "Consolas Regular";
+  color: #676e95;
+  margin-bottom: 10px;
+}
+
+
+
+.container .title{
+  font-size: 30px;
+  font-family: "Consolas Bold";
+  color: #c792ea;
+  margin: 0;
+}
+
+.container .title span{
+  color: #676e95;
+}
 
 
 .comment{
@@ -81,9 +166,9 @@
 .comment::before{ content: "//"; margin-right: 10px;}
 
 .code{ color: #adb4c4; margin: 0; }
-.code .purple{ color: #c792ea; }
-.code .blue{ color: #89ddff; }
-.code .yellow{ color: #ffcb6b; }
-.code .red{ color: #e1426c; }
-.code .green{ color: #c3e88d; }
-.code .orange{ color: #f78c65; }
+.purple{ color: #c792ea; }
+.blue{ color: #89ddff; }
+.yellow{ color: #ffcb6b; }
+.red{ color: #e1426c; }
+.green{ color: #c3e88d; }
+.orange{ color: #f78c65; }

@@ -1,0 +1,68 @@
+.navigation{
+  background-color: rgba(41, 45, 62,0.3);
+  padding: 20px 0px;
+  border-bottom: 1px solid #30354a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 100;
+
+  /* blur */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.items{
+  display: flex;
+  width: 1100px;
+  gap: 25px;
+}
+
+.navigation .item{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: end;
+  cursor: pointer;
+  font-size: 17px;
+  font-family: "Consolas Regular";
+  color: #acb3c2;
+  transition: 0.5s;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+}
+
+.navigation .item span{
+  color: #596183;
+  font-size: 15px;
+}
+
+.navigation .item:hover{
+  color: #c792ea;
+}
+
+.navigation .portfolio{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+  font-size: 17px;
+  font-family: "Consolas Bold";
+  color: #c792ea;
+  transition: 0.5s;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  margin-right: auto;
+} 
