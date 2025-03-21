@@ -26,6 +26,12 @@
       "url": "https://www.istqb.org/certifications/certified-tester-foundation-level-agile-tester-ctfl-at/",
       "subname": "Certified Agile Tester",
       "date": "Mar 2024"
+    },
+    {
+      "name": "ISTQB CTAL-TAE",
+      "url": "https://www.istqb.org/certifications/certified-tester-advanced-level-test-automation-engineering-ctal-tae-v2-0/",
+      "subname": "Advanced Level Test Automation Engineering",
+      "date": "Mar 2025"
     }
   ]
 }
