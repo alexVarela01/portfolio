@@ -12,6 +12,12 @@
       "url": "https://projects.eshkay.dev/qwificode/",
       "description": "QWiFi is a tool that generates QR codes to facilitate access to WiFi networks. Simply scan the QR code with your smartphone to connect automatically.",
       "tags": ["Tool", "jQuery"]
+    },
+    {
+      "name": "YOCO PHOTO - Portfolio",
+      "url": "https://dinis.eshkay.dev",
+      "description": "A fully integrated photography portfolio website featuring a robust, user-friendly dashboard for seamless management of all site content and data.",
+      "tags": ["Next.js", "TypeScript", "Prisma", "Postgres", "FileStorage"]
     }
   ],
   "certifications": [
