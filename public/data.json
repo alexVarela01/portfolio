@@ -18,6 +18,12 @@
       "url": "https://dinis.eshkay.dev",
       "description": "A fully integrated photography portfolio website featuring a robust, user-friendly dashboard for seamless management of all site content and data.",
       "tags": ["Next.js", "TypeScript", "Prisma", "Postgres", "FileStorage"]
+    },
+    {
+      "name": "KOVA Coffee - Concept",
+      "url": "https://concept-kova-coffee.eshkay.dev",
+      "description": "Brewed with love and care, our coffee is more than just a drink. It’s a way to bring people together. This concept website, powered by a modern frontend integrated with Strapi CMS, showcases how technology and passion blend seamlessly to create a digital experience as rich as the coffee itself.",
+      "tags": ["Next.js", "TypeScript", "Strapi", "CMS", "Motion"]
     }
   ],
   "certifications": [
