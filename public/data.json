@@ -17,6 +17,12 @@
       "name": "KOVA Coffee - Concept",
       "description": "Brewed with love and care, our coffee is more than just a drink. It’s a way to bring people together. This concept website, powered by a modern frontend integrated with Strapi CMS, showcases how technology and passion blend seamlessly to create a digital experience as rich as the coffee itself.",
       "tags": ["Next.js", "TypeScript", "Strapi", "CMS", "Motion"]
+    },
+    {
+      "name": "KMS Planeta Service",
+      "url": "https://kmsplanetaservice.com",
+      "description": "Full website for a Lisbon-based catering and events company, covering services from corporate galas to private celebrations. Built with a focus on clear service communication and a polished hospitality feel.",
+      "tags": ["Next.js", "TypeScript", "Vercel"]
     }
   ],
   "certifications": [

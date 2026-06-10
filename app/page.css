@@ -1,18 +1,43 @@
-.container{
-  background-color: #292d3e; 
+/* ── Design tokens ───────────────────────────────────────────────── */
+:root {
+  --bg:       #292d3e;
+  --surface:  #32374c;
+  --border:   #30354a;
+  --purple:   #c792ea;
+  --blue:     #89ddff;
+  --yellow:   #ffcb6b;
+  --red:      #e1426c;
+  --green:    #c3e88d;
+  --orange:   #f78c65;
+  --muted:    #8b92ab;
+  --text:     #bfc7d9;
+  --text-dim: #acb3c2;
 }
 
-/* main and stuff */
-
-.container .main{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+/* ── Section entrance animation ─────────────────────────────────── */
+.section-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.section-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.container .info{
+/* scroll-margin so fixed nav doesn't cover anchor targets */
+#about, #certifications, #projects, #contact {
+  scroll-margin-top: 68px;
+}
+
+/* ── Container ───────────────────────────────────────────────────── */
+.container {
+  background-color: #292d3e;
+}
+
+/* ── Shared .info row ────────────────────────────────────────────── */
+.container .info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -21,95 +46,204 @@
   width: 1100px;
 }
 
-.container .left{
-  flex: 0.5;
-} 
+.container .left  { flex: 0.5; }
+.container .right { flex: 0.5; }
 
-.container .main .left .name{
-  font-size: 60px;
-  font-family: "Consolas Bold";
-  color: #c792ea;
+/* ── Hero ────────────────────────────────────────────────────────── */
+.container .main {
   display: flex;
-  gap: 20px;
-  margin: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
 }
 
-.container .main .left .role{
-  font-size: 25px;
+.container .main .left .badge {
+  font-size: 13px;
+  font-family: "Consolas Regular";
+  color: #ffcb6b;
+  background-color: #32374c;
+  padding: 8px 14px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 203, 107, 0.2);
+}
+
+.container .main .left .name {
+  font-size: clamp(32px, 5vw, 60px);
+  font-family: "Consolas Bold";
+  display: flex;
+  gap: 20px;
+  margin: 8px 0;
+}
+
+.container .main .left .role {
+  font-size: clamp(17px, 2.5vw, 25px);
   font-family: "Consolas Regular";
   color: #89ddff;
   margin-bottom: 20px;
 }
 
-.container .main .left .badge{
-  font-size: 13px;
+.container .main .left .comment {
+  font-size: 17px;
+}
+
+.container .description {
+  font-size: 17px;
+  line-height: 1.75;
   font-family: "Consolas Regular";
-  color: #ffcb6b;
-  background-color: #32374c;
-  padding: 10px 15px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  width: fit-content;
+  color: #8b92ab;
+  margin: 0;
+  max-width: 52ch;
+}
+
+/* CTA buttons */
+.hero-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  gap: 12px;
+  margin-top: 28px;
 }
 
-.container .description{
-  font-size: 19px;
-  line-height: 30px;
+.btn-primary {
+  font-size: 14px;
   font-family: "Consolas Regular";
-  color: #676e95;
-  margin: 0;
+  background-color: #c792ea;
+  color: #1a1d2e;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: background-color 0.18s, transform 0.12s;
 }
-.container .main .left .comment{
-  font-size: 18px;
+.btn-primary:hover {
+  background-color: #d4a8f0;
+  transform: translateY(-1px);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-secondary {
+  font-size: 14px;
+  font-family: "Consolas Regular";
+  background-color: transparent;
+  color: #bfc7d9;
+  border: 1px solid #30354a;
+  padding: 10px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: border-color 0.18s, color 0.18s;
+}
+.btn-secondary:hover {
+  border-color: #c792ea;
+  color: #c792ea;
 }
 
-.container .right{
-  flex: 0.5;
+/* Scroll hint */
+.scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.scroll-hint .comment { font-size: 13px; margin: 0; }
+
+.scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, #676e95 0%, transparent 100%);
+  animation: scrollPulse 2.2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.35; }
+  50%       { opacity: 1; }
 }
 
-/* about me */
-
-.container .about-me{
+/* ── About ───────────────────────────────────────────────────────── */
+.container .about-me {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 100px 0;
+  background-color: #32374c;
 }
 
-.container .about-me .title{
-  margin-bottom: 10px;
-}
+.container .about-me .left { flex: 1; }
 
-.container .about-me .description{
+.container .about-me .title { margin-bottom: 16px; }
+
+.container .about-me .description {
   font-size: 17px;
-  line-height: 25px;
+  line-height: 1.7;
+  max-width: 56ch;
 }
 
-.container .about-me .left{
-  flex: 1;
+/* Photo panel — mirrors the CodePanel chrome */
+.photo-panel {
+  background-color: #292d3e;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #30354a;
 }
 
-.container .about-me .right img{
-  width: 400px;
-  height: fit-content;
-  position: relative;
-  opacity: 0.85;
-  border-radius: 5px;
+.photo-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background-color: #32374c;
+  border-bottom: 1px solid #30354a;
 }
 
-.container .about-me .left .skills{
+.photo-panel-header .controls {
+  display: flex;
+  gap: 7px;
+}
+.photo-panel-header .controls span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.photo-panel-header .controls span:nth-child(1) { background-color: #ff5370; }
+.photo-panel-header .controls span:nth-child(2) { background-color: #ffcb6b; }
+.photo-panel-header .controls span:nth-child(3) { background-color: #c3e88d; }
+
+.photo-panel-header .panel-title {
+  font-size: 13px;
+  font-family: "Consolas Regular";
+  color: #8b92ab;
+  margin-left: auto;
+}
+
+.photo-panel img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.88;
+}
+
+/* Skills */
+.container .about-me .left .skills {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  margin-top: 30px;
+  margin-top: 32px;
 }
 
-.container .about-me .left .skills .skill{
+.container .about-me .left .skills .skill {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -117,454 +251,507 @@
   flex-basis: calc(50% - 5px);
 }
 
-.container .about-me .left .skills .skill h3{
-  font-size: 20px;
+.container .about-me .left .skills .skill h3 {
+  font-size: 18px;
   font-weight: normal;
   font-family: "Consolas Regular";
   color: #bfc7d9;
   margin: 0;
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 10px;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.container .about-me .left .skills .skill h3 svg { font-size: 22px; }
+
+.container .about-me .left .skills .skill ul {
+  margin: 0 0 20px 0;
+  padding: 0 0 0 20px;
 }
 
-.container .about-me .left .skills .skill h3 svg{
-  font-size: 25px;
-}
-
-.container .about-me .left .skills .skill ul{
-  margin: 0;
-  margin-bottom: 20px;
-  padding: 0 0px 0px 20px;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.container .about-me .left .skills .skill ul li{
-  font-size: 17px;
+.container .about-me .left .skills .skill ul li {
+  font-size: 16px;
   font-family: "Consolas Regular";
-  color: #676e95;
-  margin-bottom: 10px;
+  color: #8b92ab;
+  margin-bottom: 8px;
 }
 
-/* certifications */
-
-.container .certifications{
+/* ── Certifications — vertical timeline ──────────────────────────── */
+.container .certifications {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #32374c;
-  align-items: center;
-  padding: 100px 0;
-}
-
-.container .certifications .title{
-  color: #89ddff;
+  align-items: flex-start;
+  padding: 140px 0;
+  background-color: #292d3e;
 }
 
 .container .certifications .info {
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   width: 1100px;
-  gap: 50px;
+  gap: 0;
 }
 
-.container .certifications .certifications-list{
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  gap: 30px;
-  width: 100%;
-  flex-wrap: wrap;
+.container .certifications .title {
+  color: #89ddff;
+  margin-bottom: 52px;
 }
 
-.container .certifications .certification{
-  flex-basis: calc(50% - 15px);
-  background-color: #292d3e;
-  padding: 25px 30px;
-  box-sizing: border-box;
-  border-radius: 5px;
+.certifications-timeline {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  transition: 0.2s;
-  /* border with box shadow */
-  box-shadow: 0 0 2px 0px var(--color);
+  width: 100%;
+  position: relative;
 }
 
-.container .certifications .certification:hover{
-  box-shadow: 0 0 2px 1px var(--color);
+/* Vertical connecting line */
+.certifications-timeline::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 18px;
+  bottom: 18px;
+  width: 1px;
+  background-color: #30354a;
 }
 
-.container .certifications .certification .header{
+.cert-item {
+  display: flex;
+  gap: 28px;
+  padding-bottom: 44px;
+  position: relative;
+  align-items: flex-start;
+}
+.cert-item:last-child { padding-bottom: 0; }
+
+.cert-node {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #32374c;
+  border: 1px solid #30354a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+  color: var(--color);
+  font-size: 17px;
+  transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.cert-item:hover .cert-node {
+  border-color: var(--color);
+  box-shadow: 0 0 0 3px rgba(var(--color-rgb, 199, 146, 234), 0.12);
+}
+
+.cert-body {
+  flex: 1;
+  background-color: #32374c;
+  border: 1px solid #30354a;
+  border-radius: 6px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.2s;
+}
+.cert-item:hover .cert-body { border-color: var(--color); }
+
+.cert-header {
   display: flex;
   align-items: center;
   gap: 10px;
-
-  h3{
-    font-size: 19px;
-    font-family: "Consolas Bold";
-    color: #bfc7d9;
-    margin: 0;
-    display: flex;
-    align-items: end;
-    gap: 10px;
-    margin-right: auto;
-  }
-
-  svg {
-    font-size: 22px;
-    color: var(--color);
-  }
-
-  a svg{
-    font-size: 18px;
-    color: #676e95;
-    transition: 0.2s;
-  }
-
-  a svg:hover{
-    color: var(--color);
-  }
 }
-
-.container .certifications .certification .description{
-  font-size: 17px;
-  line-height: normal;
+.cert-header h3 {
+  font-size: 18px;
+  font-family: "Consolas Bold";
+  color: #bfc7d9;
+  margin: 0;
+  margin-right: auto;
 }
+.cert-header a svg {
+  font-size: 16px;
+  color: #8b92ab;
+  transition: color 0.2s;
+}
+.cert-header a:hover svg { color: var(--color); }
 
-.container .certifications .certification .date{
+.cert-body .description {
   font-size: 15px;
+  line-height: 1.55;
+  color: #8b92ab;
+}
+
+.cert-body .date {
+  font-size: 13px;
   font-family: "Consolas Regular";
   color: var(--color);
-  margin: 0;
-
   display: flex;
   align-items: center;
-  gap: 10px;
-
-  p{
-    margin: 0;
-  }
+  gap: 8px;
 }
+.cert-body .date p { margin: 0; }
 
-
-
-/* projects */
-
-.container .projects{
+/* ── Projects — split-editor panels ─────────────────────────────── */
+.container .projects {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 100px 0;
   background-color: #32374c;
-}
-
-.container .projects .title{
-  color: #c3e88d;
 }
 
 .container .projects .info {
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   width: 1100px;
-  gap: 50px;
+  gap: 0;
 }
 
-.container .projects .projects-list{
+.container .projects .title {
+  color: #c3e88d;
+  margin-bottom: 52px;
+}
+
+/* 3-column grid — each panel is one open file */
+.container .projects .projects-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* Individual file panel */
+.project-panel {
+  border-radius: 6px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.28);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.project-panel:hover {
+  border-color: var(--color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.36);
 }
 
-.container .projects .project{
-  width: 100%;
+/* Tab bar — colored top stripe is the VS Code active-tab indicator */
+.panel-tab {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 14px;
   background-color: #292d3e;
-  padding: 25px 30px;
-  box-sizing: border-box;
-  border-radius: 5px;
+  border-bottom: 1px solid #30354a;
+  border-top: 2px solid var(--color);
+}
+
+.tab-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color);
+  opacity: 0.75;
+  flex-shrink: 0;
+}
+
+.tab-name {
+  font-size: 12px;
+  font-family: "Consolas Regular";
+  color: #8b92ab;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.panel-links {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.panel-links a {
+  color: #8b92ab;
+  font-size: 14px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.panel-links a:hover { color: var(--color); }
+
+/* Human-readable content — no code syntax */
+.panel-content {
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  transition: 0.2s;
+  gap: 14px;
+  flex: 1;
 }
 
-.container .projects .project:hover{
-  background-color: #292d3ed6;
-}
-
-.container .projects .project .header{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.container .projects .project .header h3{
-  font-size: 23px;
+.panel-title {
+  font-size: 20px;
   font-family: "Consolas Bold";
-  color: #ffcb6b;
+  color: var(--color);
   margin: 0;
-  display: flex;
-  align-items: end;
-  gap: 10px;
-  margin-right: auto;
+  line-height: 1.2;
 }
 
-.container .projects .project .header a{
-  text-decoration: none;
-  color: #676e95;
-  font-size: 18px;
+.panel-description {
+  font-size: 14px;
   font-family: "Consolas Regular";
-  transition: 0.5s;
+  color: #8b92ab;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
 }
 
-.container .projects .project .header a:hover{
-  color: #ffcb6b
-}
-
-.container .projects .project .description{
-  font-size: 17px;
-  line-height: normal;
-}
-
-.container .projects .project .tags{
+.panel-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-
-  :nth-child(1){
-    color: #e1426c;
-  }
-  :nth-child(2){
-    color: #c3e88d;
-  }
-  :nth-child(3){
-    color: #c792ea;
-  }
-  :nth-child(4){
-    color: #89ddff;
-  }
-  :nth-child(5){
-    color: #f78c65;
-  }
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 4px;
 }
 
-.container .projects .project .tags span{
-  font-size: 15px;
+.panel-tags span {
+  font-size: 12px;
   font-family: "Consolas Regular";
-  color: #292d3e;
-  background-color: #32374c;
-  padding: 5px 10px;
-  border-radius: 5px;
-} 
+  color: #8b92ab;
+  background-color: #292d3e;
+  padding: 3px 9px;
+  border-radius: 3px;
+  border: 1px solid #30354a;
+}
 
-/* contact */
+.panel-tags {
+  :nth-child(1) { color: #e1426c; border-color: rgba(225,  66, 108, 0.25); }
+  :nth-child(2) { color: #c3e88d; border-color: rgba(195, 232, 141, 0.25); }
+  :nth-child(3) { color: #c792ea; border-color: rgba(199, 146, 234, 0.25); }
+  :nth-child(4) { color: #89ddff; border-color: rgba(137, 221, 255, 0.25); }
+  :nth-child(5) { color: #f78c65; border-color: rgba(247, 140, 101, 0.25); }
+}
 
-.container .contact{
+/* ── Contact ─────────────────────────────────────────────────────── */
+.container .contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 100px 0;
+  padding: 80px 0;
 }
 
-
-.container .contact .title{
+.container .contact .title {
   color: #bfc7d9;
-
-  span{
-    margin: 0 -10px;
-    color: #e1426c;
-  }
-
-  svg{
-    color: #e1426c;
-  }
 }
+.container .contact .title span {
+  margin: 0;
+  color: #e1426c;
+}
+.container .contact .title svg { color: #e1426c; }
 
 .container .contact .info {
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 32px;
 }
 
-.container .contact .info p{
+.container .contact .info > p {
   font-size: 17px;
   font-family: "Consolas Regular";
-  color: #676e95;
+  color: #8b92ab;
   margin: 0;
-  width: 70%;
+  width: 65%;
   text-align: center;
+  line-height: 1.75;
 }
 
-.container .contact .info .socials{
+/* Terminal block */
+.terminal-block {
+  background-color: #32374c;
+  border: 1px solid #30354a;
+  border-radius: 6px;
+  padding: 20px 24px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.terminal-prompt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.t-dollar {
+  font-family: "Consolas Regular";
+  font-size: 16px;
+  color: #c3e88d;
+}
+.t-cmd {
+  font-family: "Consolas Regular";
+  font-size: 16px;
+  color: #bfc7d9;
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background-color: #c792ea;
+  opacity: 0.7;
+  vertical-align: middle;
+  animation: pulse 1s infinite ease-in-out;
+}
+
+.container .contact .info .socials {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.container .contact .info .socials a{
+.container .contact .info .socials a {
   text-decoration: none;
-  background-color: #32374c;
-  font-size: 18px;
+  background-color: #292d3e;
+  font-size: 15px;
   font-family: "Consolas Regular";
-  transition: 0.5s;
   display: flex;
   align-items: center;
   color: #bfc7d9;
-  padding: 8px 10px;
-  border-radius: 5px;
-  gap: 10px;
-
-  svg{
-    color: #c792ea;
-  }
+  padding: 8px 14px;
+  border-radius: 4px;
+  gap: 8px;
+  border: 1px solid #30354a;
+  transition: border-color 0.2s, color 0.2s;
+}
+.container .contact .info .socials a svg { color: #c792ea; }
+.container .contact .info .socials a:hover {
+  border-color: #c792ea;
+  color: #c792ea;
 }
 
-/* footer */
-
-footer{
+/* ── Footer / VS Code Status Bar ─────────────────────────────────── */
+footer {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0;
-  background-color: #292d3e;
-  color: #676e95;
-  font-size: 15px;
+  align-items: stretch;
+  height: 26px;
+  background-color: #c792ea;
+  font-size: 12px;
   font-family: "Consolas Regular";
-  gap: 10px;
+  color: #1e1b2e;
+  overflow: hidden;
 }
 
+.status-left,
+.status-right {
+  display: flex;
+  align-items: stretch;
+}
 
+.status-left  { margin-right: auto; }
+.status-right { margin-left: auto; }
 
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px;
+  white-space: nowrap;
+  cursor: default;
+  transition: background-color 0.12s;
+}
+.status-item:hover { background-color: rgba(0, 0, 0, 0.12); }
 
-/* other stuff */
-
-.container .title{
-  font-size: 30px;
+/* ── Shared helpers ──────────────────────────────────────────────── */
+.container .title {
+  font-size: clamp(22px, 3vw, 30px);
   font-family: "Consolas Bold";
   color: #c792ea;
   margin: 0;
   display: flex;
-  align-items: end;
-  gap: 10px;
+  align-items: flex-end;
+  gap: 8px;
 }
-
-.container .title span{
+.container .title span {
   font-family: "Consolas Regular" !important;
   font-weight: normal;
-  color: #676e95;
-  font-size: 25px;
+  color: #8b92ab;
+  font-size: clamp(18px, 2.5vw, 24px);
   margin-bottom: 1px;
 }
 
-
-.comment{
-  font-size: 20px;
+.comment {
+  font-size: 17px;
   font-family: "Consolas Regular";
-  color: #676e95;
+  color: #8b92ab;
   margin: 0;
 }
-.comment::before{ content: "//"; margin-right: 10px;}
+.comment::before { content: "//"; margin-right: 10px; }
 
-.code{ color: #adb4c4; margin: 0; }
-.purple{ color: #c792ea; }
-.blue{ color: #89ddff; }
-.yellow{ color: #ffcb6b; }
-.red{ color: #e1426c; }
-.green{ color: #c3e88d; }
-.orange{ color: #f78c65; }
+.code   { color: #adb4c4; margin: 0; }
+.purple { color: #c792ea; }
+.blue   { color: #89ddff; }
+.yellow { color: #ffcb6b; }
+.red    { color: #e1426c; }
+.green  { color: #c3e88d; }
+.orange { color: #f78c65; }
 
-.navigation .menu{
-  visibility: hidden;
+.navigation .menu { visibility: hidden; }
+
+/* Blinking cursor (shared) */
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50%       { opacity: 0.15; }
 }
 
-/* media queries */
-
+/* ── Media queries ───────────────────────────────────────────────── */
 @media screen and (max-width: 1200px) {
-  .container .projects .info{ width: 90%; gap: 30px; }
-  .container .contact .info{ width: 90%; gap: 30px; } 
-  .container .certifications .info{ width: 90%; gap: 30px; } 
-  .navigation .items{ width: 90%; }
-
-  .container .info{
-    width: 90%; gap: 30px;
-    .left{
-      .name{
-        font-size: 40px;
-      }
-    }
-  }
+  .container .info           { width: 90%; gap: 40px; }
+  .container .projects .info { width: 90%; }
+  .container .contact .info  { width: 90%; }
+  .container .certifications .info { width: 90%; }
+  .navigation .items         { width: 90%; }
 }
 
 @media screen and (max-width: 1000px) {
-  .container .certifications .certifications-list{flex-direction: column;}
-  .container .certifications .certifications-list .certification{width: calc(100% - 4px);margin: 2px;}
-
-  .codepanel{
+  .codepanel {
     transform-origin: center left;
     transform: scale(0.75);
   }
-
-  .container .info{
-    overflow: hidden;
-  }
+  .container .info { overflow: hidden; }
 }
 
 @media screen and (max-width: 900px) {
+  .container .info             { flex-direction: column; }
+  .codepanel                   { display: none; }
+  .certifications-timeline::before { display: none; }
 
-  .container .info{
-    flex-direction: column;
-  }
+  .container .main .left .name { font-size: 30px; }
+  .container .about-me .left .skills .skill { flex-basis: 100%; }
 
-  .codepanel{
-    display: none;
-  }
+  .container .title { font-size: 20px !important; }
+  .container .title span { font-size: 20px !important; }
 
-  .container .main .left .name{
-    font-size: 30px;
-  }
+  .container .about-me       { padding: 60px 0; }
+  .container .certifications { padding: 80px 0; }
+  .container .projects       { padding: 60px 0; }
+  .container .projects .projects-list { grid-template-columns: 1fr; gap: 24px; }
+  .project-panel             { box-shadow: none; border: 2px solid #292d3e; }
+  .container .contact        { padding: 80px 0; }
 
-  .container .about-me .left .skills .skill {
-    flex-basis: 100%;
-  }
+  .container .contact .info  { gap: 44px; }
+  .container .contact .info > p { width: 100%; }
 
-  .container .title{
-    font-size: 20px !important;
-  }
+  .terminal-block { max-width: 100%; padding: 24px; width: fit-content; }
 
-  .container .title span{
-    font-size: 20px !important;
-  }
-
-  .container .certifications {padding: 50px 0px 0px;}
-  .container .projects {padding: 50px 0px;}
-  .container .contact .info p{width: 100%;}
-  .socials{
-    flex-direction: column !important;
-    align-items: center !important;
-    width: 100% !important;
-    gap: 10px !important;
-
-    a{
-      width: 100% !important;
-      box-sizing: border-box;
-    }
-  }
-
-  footer{
-    padding: 10px;
-
-    p{
-      text-align: center;
-    }
-  }
+  footer { overflow-x: auto; }
 }
 
+@media screen and (max-width: 600px) {
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; box-sizing: border-box; }
+}
