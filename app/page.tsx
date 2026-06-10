@@ -171,7 +171,7 @@ export default function Home() {
                   <div className="header">
                     <h3>{project.name}</h3>
                     {project.github && <Link href={project.github}><FiGithub/></Link>}
-                    <Link href={project.url}><FiExternalLink/></Link>
+                    {project.url && <Link href={project.url}><FiExternalLink/></Link>}
                   </div>
                   <p className="description">{project.description}</p>
 
