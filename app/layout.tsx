@@ -1,4 +1,5 @@
 import "./global.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "Varela | Portfolio",
@@ -12,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="canonical" href="https://eshkay.dev" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body>{children}</body>
+      <body>{children}<Analytics /></body>
     </html>
   );
 }
